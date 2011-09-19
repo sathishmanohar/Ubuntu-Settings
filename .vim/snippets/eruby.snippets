@@ -1,0 +1,84 @@
+snippet end
+	<% end %>
+snippet ffcb
+	<%= ${1:f}.check_box :${2:attribute} %>${3}
+snippet ffl
+	<%= ${1:f}.label :${2:attribute}, '${3:$2}' %>${4}
+snippet ffs
+	<%= ${1:f}.submit "${2:submit}" %>${3}
+snippet for
+	<% for ${2:item} in ${1:list} %>
+		${3}
+	<% end %> ${4}
+snippet lt
+	<%= link_to "${1:name}", ${2:dest} %>${3}
+snippet rt
+	<%= render :template => "${1:file}"${2} %>${3}
+snippet ffe
+	<%= error_messages_for :${1:model} %>
+
+	<%= form_for @${2:model} do |f| %>
+		${3}
+	<% end %>${4}
+snippet ffpf
+	<%= ${1:f}.password_field :${2:attribute} %>${3}
+snippet ffta
+	<%= ${1:f}.text_area :${2:attribute} %>${3}
+snippet jsit
+	<%= javascript_include_tag "${1}"${2} %>${3}
+snippet lica
+	<%= link_to "${1:link text}", :controller => "${2:items}", :action => "${3:index}" %>${4}
+snippet ct
+	<%= content_tag '${1:DIV}', ${2:content}, ${3:options} %>${4}
+snippet ffff
+	<%= ${1:f}.file_field :${2:attribute} %>${3}
+snippet ffrb
+	<%= ${1:f}.radio_button :${2:attribute}, :${3:tag_value} %>${4}
+snippet fftf
+	<%= ${1:f}.text_field :${2:attribute} %>${3}
+snippet i18
+	I18n.t('${1:type.key}')${2}
+snippet lic
+	<%= link_to "${1:link text}", :controller => "${2:items}" %>${3}
+snippet rf
+	<%= render :file => "${1:file}"${2} %>${3}
+snippet sslt
+	<%= stylesheet_link_tag "${1}" %>${3}
+snippet ffhf
+	<%= ${1:f}.hidden_field :${2:attribute} %>${3}
+snippet ff
+	<%= form_for @${1:model} do |f| %>
+		${2}
+	<% end %>${3}
+snippet fields
+	<%= f.fields_for :${1:model}, @$1 do |${2:f}| %>
+		${3}
+	<% end %>${4}
+snippet it
+	<%= image_tag "${1}"${2} %>${3}
+snippet lia
+	<%= link_to "${1:link text}", :action => "${2:index}" %>${3}
+snippet rp
+	<%= render :partial => "${1:file}"${2} %>${3}
+snippet conf
+	<% content_for :${1:yield_label_in_layout} do %>
+		${2}
+	<% end %>${3}
+snippet st
+	<%= submit_tag "${1:button text}"${2} %>${3}
+snippet jit
+	<%= javascript_include_tag "${1:js path}"${2} %>${3}
+snippet licai
+	<%= link_to "${1:link text}", :controller => "${2:controller}", :action => "${3:action}", :id => @${4:model} %>${5}
+snippet ft
+	<%= form_tag("${1:path}"${2})${3} %>${4}
+snippet slt
+	<%= stylesheet_link_tag "${1:stylesheet_name}"${2} %>${3}
+# snippet linpp
+# snippet cs
+# snippet linp
+# snippet ofcfs
+# snippet lim
+# snippet lip
+# snippet liai
+# snippet lipp
