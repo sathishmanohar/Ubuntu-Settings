@@ -129,5 +129,6 @@ fi
 
 # Git tab completion
 # git-completion.bash file is available in git source code repo under gitdirectory/contrib/completion/git-completion.bash url: http://git.kernel.org/?p=git/git.git;a=tree;f=contrib/completion;h=9987d66f74bf48f91cfee4fa2e8d72a4e72ac12e;hb=HEAD
-source ~/.git-completion.bash
+# Seems like latest versions of git comes with autocomplete, uncomment the line below to enable completion
+# source ~/.git-completion.bash
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
