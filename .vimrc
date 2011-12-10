@@ -83,9 +83,9 @@ set foldlevel=1         "this is just what i use
 nnoremap <leader>ft Vatzf
 
 " Sathish: Following line sets default tabstop to 4 spaces
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 "set expandtab "Shows List of Expand Items instead of autocompleting
 
 " Sathish: Make searches case insensitive
@@ -251,3 +251,27 @@ if has("autocmd")
 		au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 		au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 endif
+
+" Autocommands Per Filetype Basis
+
+augroup ft_js
+	" javascript
+	let javascript_space_errors = 1
+	autocmd!
+	autocmd FileType javascript setlocal ts=4 sw=4 sts=4
+	" javascript files
+augroup END
+
+augroup ft_rb
+	" Ruby
+	autocmd!
+	autocmd FileType ruby setlocal ts=2 sw=2 sts=2
+	" ruby files
+augroup END
+
+augroup ft_py
+	" Python
+	autocmd!
+	autocmd FileType python setlocal ts=4 sw=4 sts=4
+	" Python files
+augroup END
