@@ -177,6 +177,10 @@ nmap ,nt :NERDTreeToggle<cr>
 nmap ,no :NERDTree 
 let NERDTreeShowHidden=1 "Sathish: Show Hidden files in NERDTree
 
+"Sathish: Shortcut for FufFile
+nmap ,ff :FufFile<cr>
+nmap ,fb :FufBuffer<cr>
+
 " Faster shortcut for Commenting. Requires T-Comment Plugin
 map <leader>c <c-_><c-_>
 map <leader>i <c-_>i
@@ -192,15 +196,15 @@ nmap ,ww :cd /var/www/<cr>
 
 "Sathish: Open Current Buffer in Firefox
 " abbrev ff :! start firefox %:p<cr>
-abbrev ff :exec '! start firefox 'substitute(expand('%:p'), '^C:/wamp/www/','http://localhost/','')<cr>
+" abbrev ff :exec '! start firefox 'substitute(expand('%:p'), '^C:/wamp/www/','http://localhost/','')<cr>
 
 "Sathish: Open Current Buffer in Chrome
 " abbrev cm :! start chrome %:p<cr>
-abbrev cm :exec '! start chrome 'substitute(expand('%:p'), '^C:/wamp/www/','http://localhost/','')<cr>
+" abbrev cm :exec '! start chrome 'substitute(expand('%:p'), '^C:/wamp/www/','http://localhost/','')<cr>
 
 "Sathish: Open Current Buffer in IE
 " abbrev ie :! start iexplore %:p<cr>
-abbrev ie :exec '! start iexplore 'substitute(expand('%:p'), '^C:/wamp/www/','http://localhost/','')<cr>
+" abbrev ie :exec '! start iexplore 'substitute(expand('%:p'), '^C:/wamp/www/','http://localhost/','')<cr>
 
 "Sathish: Run Ruby Code
 abbrev rub :! ruby %:p<cr>
