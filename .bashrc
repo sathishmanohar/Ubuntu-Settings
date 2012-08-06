@@ -100,13 +100,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -Ap'
-alias l='ls -CF'
-alias c='clear'
-alias lp='ls -p'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -126,6 +119,9 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# Source ~/.bash_profile for custom aliases and stuff
+source ~/.bash_profile
 
 # Git tab completion
 # git-completion.bash file is available in git source code repo under gitdirectory/contrib/completion/git-completion.bash url: http://git.kernel.org/?p=git/git.git;a=tree;f=contrib/completion;h=9987d66f74bf48f91cfee4fa2e8d72a4e72ac12e;hb=HEAD
