@@ -132,3 +132,5 @@ fi
 # Seems like latest versions of git comes with autocomplete, uncomment the line below to enable completion
 # source ~/.git-completion.bash
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
