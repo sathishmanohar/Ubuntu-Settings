@@ -2,9 +2,16 @@
 
 These files are some settings that I Picked up, along the way of using shell and tools like Git and Vim.
 
-You are free to use this, However you like.
+## Remove or Backup .bashrc
+Since there is a .bashrc file in the repo, existing .bashrc will cause issues while pulling, so delete it or backup it somewhere
 
-# Installation
+### To delete
+rm .bashrc
+
+### To Backup
+mv .bashrc .bashrc-backup
+
+## Installation
 
 Initialize a git repo in Home Directory
 
@@ -12,6 +19,7 @@ Initialize a git repo in Home Directory
 
 `git init`
 
-Now Pull from the repo url to the new repo
+Now Pull from the repo url to the new repo, creatd at your home directory
 
 `git pull git@github.com:sathishmanohar/Ubuntu-Settings.git`
+
