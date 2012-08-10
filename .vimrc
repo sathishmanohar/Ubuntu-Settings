@@ -115,6 +115,9 @@ nmap <space> :
 " New Tab
 nmap ,tt :tabnew<cr>
 
+" Suspend VIM
+nmap ,ss <C-z>
+
 " Next Tab
 nmap ,tl :tabnext<cr>
 
