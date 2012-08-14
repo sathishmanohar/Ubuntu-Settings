@@ -175,6 +175,12 @@ nmap ,cs :set filetype=css.php.html.js<cr>
 " Change First sytax to js
 nmap ,js :set filetype=js.php.css.html<cr>
 
+"Compile and Run C Program in Linux using GCC
+nmap ,cr :!gcc -o %< % && ./%<<cr>
+
+"Compile Program in Linux using GCC
+nmap ,cc :!gcc -o %< %<cr>
+
 "Sathish: Shortcut for NerdTreeToggle
 nmap ,nt :NERDTreeToggle<cr>
 nmap ,no :NERDTree 
