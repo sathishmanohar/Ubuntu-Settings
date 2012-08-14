@@ -10,5 +10,5 @@ alias sl="screen -ls"
 alias sr="screen -r"
 
 # Rails Specific aliases
-alias rs='screen rails s'
-alias sg='screen guard'
+alias rs='screen -S rails_server rails s'
+alias gu='screen -S guard_screen guard'
