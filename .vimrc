@@ -288,3 +288,7 @@ augroup ft_py
 	autocmd FileType python setlocal ts=4 sw=4 sts=4
 	" Python files
 augroup END
+
+
+"Following are Power Line Plugin Specific Config
+set laststatus=2
