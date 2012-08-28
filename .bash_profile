@@ -4,6 +4,7 @@ alias la='ls -Ap'
 alias l='ls -CF'
 alias c='clear'
 alias lp='ls -p'
+alias ls='ls -p --color'
 
 #Screen aliases
 alias sl="screen -ls"
