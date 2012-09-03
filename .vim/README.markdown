@@ -1,155 +1,155 @@
-rails.vim
-=========
+                   ,
+                  / \,,_  .'|
+               ,{{| /}}}}/_.'            _____________________________________________
+              }}}}` '{{'  '.            /                                             \
+            {{{{{    _   ;, \          /                Gentlemen,                     \
+         ,}}}}}}    /o`\  ` ;)        |                                                |
+        {{{{{{   /           (        |                 this is ...                    |
+        }}}}}}   |            \       |                                                |
+       {{{{{{{{   \            \      |                                                |
+       }}}}}}}}}   '.__      _  |     |    _____             __             __  _      |
+       {{{{{{{{       /`._  (_\ /     |   / ___/__  ______  / /_____ ______/ /_(_)____ |
+        }}}}}}'      |    //___/   --=:   \__ \/ / / / __ \/ __/ __ `/ ___/ __/ / ___/ |
+    jgs `{{{{`       |     '--'       |  ___/ / /_/ / / / / /_/ /_/ (__  ) /_/ / /__   |
+         }}}`                         | /____/\__, /_/ /_/\__/\__,_/____/\__/_/\___/   |
+                                      |      /____/                                    |
+                                      |                                               /
+                                       \_____________________________________________/
 
-Remember when everybody and their mother was using TextMate for Ruby on
-Rails development?  Well if it wasn't for rails.vim, we'd still be in
-that era.  So shut up and pay some respect.  And check out these
-features:
 
-* Easy navigation of the Rails directory structure.  `gf` considers
-  context and knows about partials, fixtures, and much more.  There are
-  two commands, `:A` (alternate) and `:R` (related) for easy jumping
-  between files, including favorites like model to migration, template
-  to helper, and controller to functional test.  For more advanced
-  usage, `:Rmodel`, `:Rview`, `:Rcontroller`, and several other commands
-  are provided.  `:help rails-navigation`
 
-* Enhanced syntax highlighting.  From `has_and_belongs_to_many` to
-  `distance_of_time_in_words`, it's here.  For easy completion of these
-  long method names, `'completefunc'` is set to enable syntax based
-  completion on CTRL-X CTRL-U.
 
-* Interface to rake.  Use `:Rake` to run the current test, spec, or
-  feature.  Use `:.Rake` to do a focused run of just the method,
-  example, or scenario on the current line.  `:Rake` can also run
-  arbitrary migrations, load individual fixtures, and more.
-  `:help rails-rake`
+Syntastic is a syntax checking plugin that runs files through external syntax
+checkers and displays any resulting errors to the user. This can be done on
+demand, or automatically as files are saved. If syntax errors are detected, the
+user is notified and is happy because they didn't have to compile their code or
+execute their script to find them.
 
-* Interface to `script/*`.  Generally, use `:Rscript about` to call
-  `script/about` or `script/rails about`.  Most commands have wrappers
-  with additional features: `:Rgenerate controller Blog` generates a
-  blog controller and edits `app/controllers/blog_controller.rb`.
-  `:help rails-scripts`
+At the time of this writing, syntax checking plugins exist for applescript, c,
+coffee, cpp, css, cucumber, cuda, docbk, erlang, eruby, fortran,
+gentoo_metadata, go, haml, haskell, html, javascript, json, less, lua, matlab,
+perl, php, puppet, python, rst, ruby, sass/scss, sh, tcl, tex, vala, xhtml,
+xml, xslt, yaml, zpt
 
-* Partial extraction and migration inversion.  `:Rextract {file}`
-  replaces the desired range (ideally selected in visual line mode) with
-  `render :partial => '{file}'`, which is automatically created with
-  your content.  The `@{file}` instance variable is replaced with the
-  `{file}` local variable.  `:Rinvert` takes a `self.up` migration and
-  writes a `self.down`.  `:help rails-refactoring`
+Screenshot
+----------
 
-* Integration with other plugins.  `:Rtree` spawns
-  [NERDTree.vim](https://github.com/scrooloose/nerdtree).  If
-  [dbext.vim](http://www.vim.org/scripts/script.php?script_id=356) is
-  installed, it will be transparently configured to reflect
-  `database.yml`.  Users of
-  [abolish.vim](https://github.com/tpope/vim-abolish) get pluralize and
-  tableize coercions, and users of
-  [bundler.vim](https://github.com/tpope/vim-bundler) get `bundle exec
-  rake`.  `:help rails-integration`
+Below is a screenshot showing the methods that Syntastic uses to display syntax
+errors.  Note that, in practise, you will only have a subset of these methods
+enabled.
+
+![Screenshot 1](https://github.com/scrooloose/syntastic/raw/master/_assets/screenshot_1.png)
+
+1. Errors are loaded into the location list for the corresponding window.
+2. When the cursor is on a line containing an error, the error message is echoed in the command window.
+3. Signs are placed beside lines with errors - note that warnings are displayed in a different color.
+4. There is a configurable statusline flag you can include in your statusline config.
+5. Hover the mouse over a line containing an error and the error message is displayed as a balloon.
+6. (not shown) Highlighting errors with syntax highlighting. Erroneous parts of lines can be highlighted.
 
 Installation
 ------------
 
-If you don't have a preferred installation method, I recommend
-installing [pathogen.vim](https://github.com/tpope/vim-pathogen), and
-then simply copy and paste:
+Installing syntastic is easy but first you need to have the pathogen plugin installed.  If you already
+have pathogen working then skip Step 1 and go to Step 2.
+
+Step 1: Install pathogen.vim
+----------------------------
+
+First I'll show you how to install tpope's [pathogen.vim](https://github.com/tpope/vim-pathogen) so that 
+it's easy to install syntastic.  Do this in your Terminal so that you get the pathogen.vim file 
+and the directories it needs:
+
+    mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+    curl -so ~/.vim/autoload/pathogen.vim \
+        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+Next you *need to add this* to your ~/.vimrc:
+
+        call pathogen#infect()
+
+Step 2: Install syntastic as a pathogen bundle
+----------------------------------------------
+
+You now have pathogen installed and can put syntastic into ~/.vim/bundle like this:
+    
 
     cd ~/.vim/bundle
-    git clone git://github.com/tpope/vim-rails.git
+    git clone https://github.com/scrooloose/syntastic.git
 
-Once help tags have been generated, you can view the manual with
-`:help rails`.
+Quit vim and start it back up to reload it, then type:
+
+    :Helptags
+
+If you get an error when you do this, then you probably didn't install pathogen right.  Go back to
+step 1 and make sure you did the following:
+
+1. Created both the ~/.vim/autoload and ~/.vim/bundle directories.
+2. Added the "call pathogen#infect()" line to your ~/.vimrc file
+3. Did the git clone of syntastic inside ~/.vim/bundle
+4. Have permissions to access all of these directories.
+
+
+Google group
+------------
+
+To get information or make suggestions check out the [google group](https://groups.google.com/group/vim-syntastic).
+
 
 FAQ
 ---
 
-> I installed the plugin and started Vim.  Why does only the :Rails
-> command exist?
+__Q. I installed syntastic but it isn't reporting any errors ...__
 
-This plugin cares about the current file, not the current working
-directory.  Edit a file from a Rails application.
+A. The most likely reason is that the syntax checker that it requires isn't installed. For example: python requires either `flake8`, `pyflakes` or `pylint` to be installed and in `$PATH`. To see which executable is required, just look in `syntax_checkers/<filetype>.vim`.
 
-> I opened a new tab.  Why does only the :Rails command exist?
+Another reason it could fail is that the error output for the syntax checker may have changed. In this case, make sure you have the latest version of the syntax checker installed. If it still fails then create an issue - or better yet, create a pull request.
 
-This plugin cares about the current file, not the current working
-directory.  Edit a file from a Rails application.  You can use the `:RT`
-family of commands to open a new tab and edit a file at the same time.
 
-> Can I use rails.vim to edit Rails engines?
+Changelog
+---------
+2.3.0 (16-feb-2012)
 
-It's not supported, but if you `touch config/environment.rb` in the root
-of the engine, things should mostly work.
+  * Add syntastic_loc_list_height option
+  * Allow errors to have a "subtype" that is signed differently to standard
+    errors. Currently geared towards differentiating style errors from
+    syntax errors. Currently implemented for phpcs (technosophos).
+  * New checkers for:
+    * yaml
+    * haxe (davidB)
+    * ocaml (edwintorok)
+    * pylint (parantapa)
+    * rust (cjab)
+  * Updates to existing checkers:
+    * jslint
+    * jshint (gillesruppert)
+    * fortran (bmattern)
+    * sass
+    * html (darcyparker)
+    * coffee (darcyparker)
+    * docbk (darcyparker)
+    * xml
+    * xslt
+    * less (irrationalfab)
+    * php (AD7six, technosophos)
+    * cuda
+    * python (mitchellh, pneff)
+    * perl (Anthony Carapetis)
+    * c (naoina, zsprackett)
+    * puppet (frimik)
 
-> Can I use rails.vim to edit other Ruby projects?
+2.2.0 (24-dec-2011)
 
-I wrote [rake.vim](https://github.com/tpope/vim-rake) for exactly that
-purpose.  It activates for any project with a `Rakefile` that's not a
-Rails application.
-
-> Is Rails 3 supported yet?
-
-Of course.
-
-> Is Rails 2 still supported?
-
-Baby, you can go all the way back to Rails 1 if you like (give or take
-some syntax highlighting).
-
-> Can I use rails.vim with engines?
-
-Not officially, but if you create `config/environment.rb` in the root of
-the engine, it will mostly work.
-
-> Rake is slow.  How about making `:Rake` run
-> `testrb`/`rspec`/`cucumber` directly instead of `rake`?
-
-Well then it wouldn't make sense to call it `:Rake`, now, would it?
-Maybe one day I'll add a separate `:Run` command or something.  In the
-meantime, here's how you can set up `:make` to run the current test:
-
-    autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
-    autocmd FileType ruby
-          \ if expand('%') =~# '_test\.rb$' |
-          \   compiler rubyunit | setl makeprg=testrb\ \"%:p\" |
-          \ elseif expand('%') =~# '_spec\.rb$' |
-          \   compiler rspec | setl makeprg=rspec\ \"%:p\" |
-          \ else |
-          \   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
-          \ endif
-    autocmd User Bundler
-          \ if &makeprg !~# 'bundle' | setl makeprg^=bundle\ exec\  | endif
-
-Contributing
-------------
-
-If your [commit message sucks](http://stopwritingramblingcommitmessages.com/),
-I'm not going to accept your pull request.  I've explained very politely
-dozens of times that
-[my general guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
-are absolute rules on my own repositories, so I may lack the energy to
-explain it to you yet another time.  And please, if I ask you to change
-something, `git commit --amend`.
-
-Beyond that, don't be shy about asking before patching.  What takes you
-hours might take me minutes simply because I have both domain knowledge
-and a perverse knowledge of VimScript so vast that many would consider
-it a symptom of mental illness.  On the flip side, some ideas I'll
-reject no matter how good the implementation is.  "Send a patch" is an
-edge case answer in my book.
-
-Self-Promotion
---------------
-
-Like rails.vim? Follow the repository on
-[GitHub](https://github.com/tpope/vim-rails) and vote for it on
-[vim.org](http://www.vim.org/scripts/script.php?script_id=1567).  And if
-you're feeling especially charitable, follow [tpope](http://tpo.pe/) on
-[Twitter](http://twitter.com/tpope) and
-[GitHub](https://github.com/tpope).
-
-License
--------
-
-Copyright (c) Tim Pope.  Distributed under the same terms as Vim itself.
-See `:help license`.
+  * only do syntax checks when files are saved (not when first opened) - add g:syntastic_check_on_open option to get the old behavior back
+  * bug fix with echoing error messages; fixes incompatability with cmd-t (datanoise)
+  * dont allow warnings to mask errors when signing/echoing errors (ashikase)
+  * auto close location list when leaving buffer. (millermedeiros)
+  * update errors appropriately when :SyntasticToggleMode is called
+  * updates/fixes to existing checkers:
+    * javascript/jshint (millermedeiros)
+    * javascript/jslint
+    * c (kongo2002)
+  * Support for new filetypes:
+    * JSON (millermedeiros, tocer)
+    * rst (reStructuredText files) (JNRowe)
+    * gentoo-metadata (JNRowe)
