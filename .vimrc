@@ -292,3 +292,6 @@ augroup END
 
 "Following are Power Line Plugin Specific Config
 set laststatus=2
+
+"Buffer Explorer Keymap
+nmap ,bs \bs
