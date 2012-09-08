@@ -155,13 +155,13 @@ nnoremap ,ls :e!<cr>
 nnoremap ,le `.
 
 "Sathish: Automatically change current directory to that of the file in the buffer
-autocmd BufEnter * cd %:p:h
+" autocmd BufEnter * cd %:p:h
 
 " Set filetype to html and eruby when .html.erb file extension is detected
-autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
+" autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 
 " Set filetype to html, js and php when php file extension is detected
-autocmd BufNewFile,BufRead *.php set filetype=html.php.js
+" autocmd BufNewFile,BufRead *.php set filetype=html.php.js
 
 " Change First sytax to php
 nmap ,ph :set filetype=php.html.css.js<cr>
