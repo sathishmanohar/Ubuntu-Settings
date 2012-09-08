@@ -181,6 +181,9 @@ nmap ,cr :!gcc -o %< % && ./%<<cr>
 "Compile Program in Linux using GCC
 nmap ,cc :!gcc -o %< %<cr>
 
+"Show Errors Split of syntastic plugin
+nmap ,er :Errors<cr>
+
 "Sathish: Shortcut for NerdTreeToggle
 nmap ,nt :NERDTreeToggle<cr>
 nmap ,no :NERDTree 
