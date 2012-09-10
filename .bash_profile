@@ -14,7 +14,7 @@ alias sr="screen -r"
 alias rs='screen -S rails_server rails s'
 alias gu='screen -S guard_screen bundle exec guard'
 alias subl='screen -m -d -S sublime_text subl'
-alias rspec='bundle exec rspec'
+alias rsp='bundle exec rspec'
 alias spork='screen -S spork_server spork'
 
 # General Program aliases
