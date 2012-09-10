@@ -24,7 +24,7 @@ set number
 
 " Sathish: Following lines set GUI Font and Color scheme
 set background=dark
-colorscheme jellybeans
+colorscheme Tomorrow-Night
 
 " color classes in CSS syntax differently than ids
 hi link cssClassName tag
