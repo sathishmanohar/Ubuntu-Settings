@@ -53,6 +53,7 @@ set splitright
 nnoremap <leader>v <C-w>v<C-w>l :enew<cr>
 nnoremap <leader>n <C-w>n<C-w>j :enew<cr>
 
+" Sathish: go to file in new split
 nnoremap ,gf <C-w>f<C-w>L
 
 " Sathish: Maxmize and Minimize Splits
@@ -68,6 +69,7 @@ set smartindent
 set autoindent
 
 " Sathish: Set default slash to / instead of \ during omnicomplete
+" This setting is mainly for windows
 " set shellslash
 
 "Auto-completion Menu
@@ -93,7 +95,7 @@ set ignorecase
 set incsearch
 set hlsearch
 
-" Sathish: tell vim to keep a backup file
+" Sathish: tell vim about backup files
 set nobackup
 set nowritebackup
 
@@ -112,11 +114,11 @@ nmap ,ev :tabedit $MYVIMRC<cr>
 "Sathish: space types : in normal mode
 nmap <space> :
 
-" New Tab
-nmap ,tt :tabnew<cr>
-
 " Suspend VIM
 nmap ,ss <C-z>
+
+" New Tab
+nmap ,tt :tabnew<cr>
 
 " Next Tab
 nmap ,tl :tabnext<cr>
@@ -133,7 +135,7 @@ nnoremap ,ll :close<cr>
 " Deleted Current Buffer
 nmap ,bd :bd<cr>
 
-"Select All
+"Select current line
 nnoremap ,cl ^v$h
 
 "Select All
@@ -263,13 +265,12 @@ nnoremap <C-L> :call g:ToggleNuMode()<cr>
 
 " Change Cursor in different Modes
 if has("autocmd")
-	  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-		au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-		au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+	au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+	au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+	au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
 endif
 
 " Autocommands Per Filetype Basis
-
 augroup ft_js
 	" javascript
 	let javascript_space_errors = 1
