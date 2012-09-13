@@ -299,3 +299,15 @@ set laststatus=2
 
 "Buffer Explorer Keymap
 nmap ,bs \bs
+
+"VIM Ruby Conque Plugin
+let g:ruby_conque_rspec_command='rspec'
+
+" Cmd-Shift-R for RSpec
+nmap ,rf :call RunRspecCurrentFileConque()<CR>
+
+" Cmd-Shift-L for RSpec Current Line
+nmap ,rl :call RunRspecCurrentLineConque()<CR>
+
+" ,Cmd-R for Last conque command
+nmap ,rr :call RunLastConqueCommand()<CR>
