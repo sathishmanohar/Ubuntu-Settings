@@ -189,7 +189,7 @@ nmap ,er :Errors<cr>
 "Sathish: Shortcut for NerdTreeToggle
 nmap ,nt :NERDTreeToggle<cr>
 nmap ,no :NERDTree 
-let NERDTreeShowHidden=1 "Sathish: Show Hidden files in NERDTree
+let NERDTreeShowHidden=0 "Sathish: Show Hidden files in NERDTree
 
 "Sathish: Shortcut for FufFile
 nmap ,ff :FufFile<cr>
