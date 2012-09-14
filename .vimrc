@@ -301,7 +301,7 @@ set laststatus=2
 nmap ,bs \bs
 
 "VIM Ruby Conque Plugin
-let g:ruby_conque_rspec_command='rspec'
+let g:ruby_conque_rspec_command='bundle exec rspec'
 
 " Cmd-Shift-R for RSpec
 nmap ,rf :call RunRspecCurrentFileConque()<CR>
