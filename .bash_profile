@@ -17,6 +17,7 @@ alias rc='screen -S rails_console rails console'
 alias subl='screen -m -d -S sublime_text subl'
 alias rsp='bundle exec rspec'
 alias spk='screen -S spork_server spork'
+alias be='bundle exec'
 
 # General Program aliases
 alias irssi='screen -S irssi_screen irssi'
