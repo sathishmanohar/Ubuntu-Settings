@@ -251,6 +251,13 @@ inoremap jj <ESC>
     "set background=dark
 "endif
 
+"Enforce 80 Column Rule
+if exists('+colorcolumn')
+	set colorcolumn=80
+else
+	au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 " Script for enabling Relative Line Number Toggling Function
 function! g:ToggleNuMode()
 if(&rnu == 1)
