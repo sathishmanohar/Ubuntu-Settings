@@ -279,27 +279,35 @@ endif
 
 " Autocommands Per Filetype Basis
 augroup ft_js
-	" javascript
 	let javascript_space_errors = 1
 	autocmd!
 	autocmd FileType javascript setlocal ts=4 sw=4 sts=4
-	" javascript files
 augroup END
 
 augroup ft_rb
-	" Ruby
 	autocmd!
 	autocmd FileType ruby setlocal ts=2 sw=2 sts=2
-	" ruby files
 augroup END
 
 augroup ft_py
-	" Python
 	autocmd!
 	autocmd FileType python setlocal ts=4 sw=4 sts=4
-	" Python files
 augroup END
 
+augroup ft_html
+	autocmd!
+	autocmd FileType html setlocal ts=2 sw=2 sts=2
+augroup END
+
+augroup ft_css
+	autocmd!
+	autocmd FileType css setlocal ts=2 sw=2 sts=2
+augroup END
+
+augroup ft_erb
+	autocmd!
+	autocmd FileType eruby setlocal ts=2 sw=2 sts=2
+augroup END
 
 "Following are Power Line Plugin Specific Config
 set laststatus=2
