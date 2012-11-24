@@ -88,7 +88,7 @@ nnoremap <leader>ft Vatzf
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-"set expandtab "Shows List of Expand Items instead of autocompleting
+set expandtab "Converts Tabs to Spaces
 
 " Sathish: Make searches case insensitive
 set ignorecase
