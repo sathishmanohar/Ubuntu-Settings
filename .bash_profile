@@ -21,3 +21,6 @@ alias be='bundle exec'
 
 # General Program aliases
 alias irssi='screen -S irssi_screen irssi'
+
+# Set to 256 colors
+export TERM=xterm-256color
