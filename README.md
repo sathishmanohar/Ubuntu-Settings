@@ -21,9 +21,10 @@ Initialize a git repo in Home Directory
 
 `git init`
 
-Now Pull from the repo url to the new repo, creatd at your home directory
+Now Pull from the repo url to the new repo, created at your home directory
 
-`git pull git@github.com:sathishmanohar/Ubuntu-Settings.git`
+    git remote add origin git://github.com/sathishmanohar/Ubuntu-Settings.git
+    git pull origin master
 
 Now I know having your home directory as a git repository is annoying
 So, I generally rename the .git directory to temperorily get rid of git
