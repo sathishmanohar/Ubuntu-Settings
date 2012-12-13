@@ -17,20 +17,20 @@ mv .bashrc .bashrc-backup
 
 Initialize a git repo in Home Directory
 
-`cd ~`
+`sh cd ~`
 
-`git init`
+`sh git init`
 
 Now Pull from the repo url to the new repo, created at your home directory
 
-    git remote add origin git://github.com/sathishmanohar/Ubuntu-Settings.git
-    git pull origin master
+```sh git remote add origin git://github.com/sathishmanohar/Ubuntu-Settings.git
+git pull origin master```
 
 Now I know having your home directory as a git repository is annoying
 So, I generally rename the .git directory to temperorily get rid of git
 
-`mv .git .git-dump`
+`sh mv .git .git-dump`
 
 I enter the following command, To bring back the repository to make changes
 
-`mv .git-dump .git`
+`sh mv .git-dump .git`
