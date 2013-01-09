@@ -150,6 +150,9 @@ vnoremap ,cp "+y
 "Paste Last yanked
 nnoremap ,pp "0p
 
+"Paste Last yanked
+nnoremap ,rs :registers<cr>
+
 "Loads Last Saved Version, Discards all changes done.
 nnoremap ,ls :e!<cr>
 
