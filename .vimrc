@@ -186,6 +186,9 @@ nmap ,cr :!gcc -o %< % && ./%<<cr>
 "Compile Program in Linux using GCC
 nmap ,cc :!gcc -o %< %<cr>
 
+"Run current python file
+nmap ,pr :!python %<cr>
+
 "Show Errors Split of syntastic plugin
 nmap ,er :Errors<cr>
 
