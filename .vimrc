@@ -50,16 +50,16 @@ set splitbelow
 set splitright
 
 " Sathish: Opens Vertical Split and Switches Over
-nnoremap <leader>v <C-w>v<C-w>l :enew<cr>
-nnoremap <leader>n <C-w>n<C-w>j :enew<cr>
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>n <C-w>n<C-w>j
 
 " Sathish: go to file in new split
 nnoremap ,gf <C-w>f<C-w>L
 
 " Sathish: Maxmize and Minimize Splits
-nmap <leader>x <C-w>|
-nnoremap <leader>m <C-w>1|
-nnoremap <leader>z <C-w>=
+nmap ,mm <C-w>\|
+nmap ,nn <C-w>1\|
+nmap ,eq <C-w>=
 
 " Sathish: Set Line Spacing
 set linespace=3
@@ -82,7 +82,8 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 " Sathish: Shortcut to Fold Tags with Leader (usually \) + ft
-nnoremap <leader>ft Vatzf
+nmap ,ft Vatzf
+nmap ,ua zR
 
 " Sathish: Following line sets default tabstop to 4 spaces
 set tabstop=4
